@@ -3,7 +3,6 @@ from chat import ChatBackend, app
 
 def publish_message(user, message):
         chat = ChatBackend()
-        chat.subscribe('chat')
         message = "{'handle': user, 'text': message}"
         chat.publish(message)
 
