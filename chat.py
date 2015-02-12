@@ -51,7 +51,15 @@ class ChatBackend(object):
             client.send(data)
         except Exception:
             self.clients.remove(client)
-
+            
+    def publish(self, data):
+        """publish data"""
+        try:
+            for client in self.clients:
+                gevent.spawn(self.send, client, data)
+        except Exception:
+            print "publish didn't work"
+            
     def run(self):
         """Listens for new messages in Redis, and sends them to clients."""
         for data in self.__iter_data():
