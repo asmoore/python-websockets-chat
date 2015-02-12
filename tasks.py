@@ -1,3 +1,4 @@
+import sys
 from chat import ChatBackend, app
 
 def pusblish_message(user, message):
