@@ -1,7 +1,7 @@
 import sys
 from chat import ChatBackend, app
 
-def pusblish_message(user, message):
+def publish_message(user, message):
         chat = ChatBackend()
         chat.subscribe('chat')
         message = "{'handle': user, 'text': message}"
