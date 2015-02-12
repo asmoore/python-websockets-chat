@@ -53,6 +53,7 @@ class ChatBackend(object):
             self.clients.remove(client)
             
     def publish(self, data):
+        print data
         """publish data"""
         try:
             for client in self.clients:
